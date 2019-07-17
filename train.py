@@ -26,7 +26,7 @@ parser.add_argument('--workers', type=int, default=2, help='number of data loadi
 parser.add_argument('--batchSize', type=int, default=16, help='input batch size')
 parser.add_argument('--imageSize', type=int, default=15, help='the low resolution image size')
 parser.add_argument('--upSampling', type=int, default=2, help='low to high resolution scaling factor')
-parser.add_argument('--nEpochs', type=int, default=100, help='number of epochs to train for')
+parser.add_argument('--nEpochs', type=int, default=100, help='number of epochs to train.py for')
 parser.add_argument('--generatorLR', type=float, default=0.0001, help='learning rate for generator')
 parser.add_argument('--discriminatorLR', type=float, default=0.0001, help='learning rate for discriminator')
 parser.add_argument('--cuda', action='store_true', help='enables cuda')
@@ -106,7 +106,7 @@ visualizer = Visualizer(image_size=opt.imageSize*opt.upSampling)
 
 low_res = torch.FloatTensor(opt.batchSize, 3, opt.imageSize, opt.imageSize)
 
-# Pre-train generator using raw MSE loss
+# Pre-train.py generator using raw MSE loss
 print 'Generator pre-training'
 for epoch in range(2):
     mean_generator_content_loss = 0.0
